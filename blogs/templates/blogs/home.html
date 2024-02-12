@@ -1,0 +1,10 @@
+{% extends "blogs/layout.html" %}
+
+{% block content%}
+    {% for item in posts %}
+        <h1>{{ item.title }}</h1>
+        <p>By {{ item.author }} on {{ item.date_posted }}</p>
+        <p>{{ item.content }}</p>
+    {% endfor %}
+{% endblock content%}
+   
