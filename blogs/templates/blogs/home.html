@@ -1,18 +1,18 @@
-{% extends "blogs/layout.html" %}
 
+{% extends "blogs/layout.html" %}
 {% block content%}
     {% for item in posts %}
-       
           <div class="card" style="margin-top: 18px;">
             <div class="card-header">
-              Featured
+              {{ item.title }}
             </div>
             <div class="card-body">
-              <h5 class="card-title">{{ item.title }}</h5>
+              <h5 class="card-title"></h5>
               <p class="card-text">{{ item.content }}.</p>
             </div>
             <div class="card-footer" style="text-align: right;">
-                <p class="card-text">Posted on {{ item.date_posted }}</p>   
+                Posted By: <span style="color:blue">{{item.author}} </span> 
+                Posted on {{ item.date_posted|date:'F d, Y' }}  
             </div>
           </div>
     {% endfor %}
